@@ -18,22 +18,11 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="static/js/Lightweight-Chart/cssCharts.css">
 	<style>
-			.logo-header {
-
-			overflow: hidden;
+		img{
+			position : absolute;
+			left : 10px;
+			top : -28px;
 		}
-		.logo-header > img {
-			width: 200px;
-			height: 80px;
-			position: absolute;
-			left: 20px;
-			top: -8px;
-		}
-<!--		img{-->
-<!--			position : absolute;-->
-<!--			left : 10px;-->
-<!--			top : -28px;-->
-<!--		}-->
 	</style>
 </head>
 
@@ -50,14 +39,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <a class="navbar-brand waves-effect waves-dark logo-header" href="index">
-					<img src="/static/img/logo_white.png">
+				
+                <a class="navbar-brand waves-effect waves-dark" href="index">
+					<img src="static/img/logo_white.png" width="200" height="90" >
 				</a>
-
-<!--                <a class="navbar-brand waves-effect waves-dark" href="index">-->
-<!--					<img src="static/img/logo_white.png" width="200" height="90" >-->
-<!--				</a>-->
 				
 				
 		<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
@@ -276,7 +261,6 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <td><B>회사명</B></td>
                     <td><B>종목코드</B></td>
                     <td><B>날짜</B></td>
                     <td><B>시가</B></td>
@@ -288,17 +272,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for merge in merges %}
+                {% for price in prices %}
                 <tr>
-                    <td>{{merge.company}}</td>
-                    <td>{{merge.code}}</td>
-                    <td>{{merge.date}}</td>
-                    <td>{{merge.open}}</td>
-                    <td>{{merge.high}}</td>
-                    <td>{{merge.low}}</td>
-                    <td>{{merge.close}}</td>
-                    <td>{{merge.diff}}</td>
-                    <td>{{merge.volume}}</td>
+                    <td>{{price.code}}</td>
+                    <td>{{price.date}}</td>
+                    <td>{{price.open}}</td>
+                    <td>{{price.high}}</td>
+                    <td>{{price.low}}</td>
+                    <td>{{price.close}}</td>
+                    <td>{{price.diff}}</td>
+                    <td>{{price.volume}}</td>
                 </tr>
                 {% endfor %}
                 <tbody>
